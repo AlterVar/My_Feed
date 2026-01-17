@@ -1,0 +1,40 @@
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+
+  .profile-form__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    .input__label {
+      line-height: 2.2rem;
+    }
+
+    .input__title {
+      margin-bottom: 24px;
+    }
+    .radio-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+  .profile-form__actions {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .profile-form {
+    .profile-form__fields {
+      width: 415px;
+      gap: 24px;
+    }
+  }
+}

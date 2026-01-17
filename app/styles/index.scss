@@ -1,0 +1,151 @@
+@import "normalize.css";
+@import url("@/shared/styles/themes/_light.scss");
+@import url("@/shared/styles/themes/_dark.scss");
+@import 'react-loading-skeleton/dist/skeleton.css';
+
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("@/shared/assets/fonts/Gilroy-Regular.woff2") format("woff2"),
+    url("@/shared/assets/fonts/Gilroy-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("@/shared/assets/fonts/Gilroy-Medium.woff2") format("woff2"),
+    url("@/shared/assets/fonts/Gilroy-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("@/shared/assets/fonts/Gilroy-Semibold.woff2") format("woff2"),
+    url("@/shared/assets/fonts/Gilroy-Semibold.woff") format("woff");
+}
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("@/shared/assets/fonts/Gilroy-Bold.woff2") format("woff2"),
+    url("@/shared/assets/fonts/Gilroy-Bold.woff") format("woff");
+}
+*,
+fieldset {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+body {
+  font-family: "Gilroy", sans-serif;
+  overflow-x: hidden;
+}
+body:has(.open) {
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+ul {
+  list-style: none;
+}
+button {
+  font-family: "Gilroy", sans-serif;
+  color: var(--text-primary);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+input {
+  font-family: "Gilroy", sans-serif;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.visually-hidden {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: calc(100vh - 64px);
+  padding: 24px 16px;
+}
+.content-container {
+  min-width: 117px;
+  max-width: 743px;
+  margin: 0 auto;
+  width: 100%;
+}
+.icon_logo {
+  path:last-child {
+    fill: var(--text-primary);
+  }
+}
+.icon_text-secondary {
+  fill: var(--text-secondary);
+  stroke: var(--text-secondary);
+}
+.icont_text-tertiary {
+  fill: var(--text-tertiary);
+  stroke: var(--text-tertiary);
+}
+.icon_control {
+  fill: var(--control-switch);
+	path {
+		fill: var(--control-switch);
+	}
+}
+.icon_primary {
+  stroke: var(--icon-primary);
+  fill: var(--icon-primary);
+
+  path {
+    stroke: var(--icon-primary);
+    fill: var(--icon-primary);
+  }
+}
+.icon_secondary {
+  stroke: var(--icon-secondary);
+	path {
+		stroke: var(--icon-secondary);
+	}
+}
+.mobile-only {
+  display: block;
+}
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+  .desktop-only {
+    display: block;
+  }
+}

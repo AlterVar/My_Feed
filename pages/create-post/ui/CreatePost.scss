@@ -1,0 +1,29 @@
+@use "@/shared/styles/mixins";
+
+.create-post {
+  &.page-container {
+    gap: 22px;
+  }
+  .content-container {
+    background-color: transparent;
+    border-radius: 16px;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .create-post__title {
+    @include mixins.Title_Bold_24pt;
+    color: var(--text-contrast2);
+    margin: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .create-post .content-container {
+    padding: 40px;
+    background-color: var(--bg-primary);
+  }
+}

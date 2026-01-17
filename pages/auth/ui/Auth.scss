@@ -1,0 +1,80 @@
+@use "@/shared/styles/mixins";
+
+.auth {
+  min-height: 100vh;
+  background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	.auth__container {
+		min-height: 100vh;
+		width: 100vw;
+		max-width: 416px;
+		padding: 64px 16px 24px;
+		background-color: var(--bg-primary);
+		border-radius: 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	
+		.auth__logo {
+			flex-shrink: 0;
+			align-self: center;
+		}
+	
+		.tabs {
+			display: flex;
+			align-items: center;
+	
+			.tabs__btn {
+				@include mixins.Body_Regular_16pt;
+				background-color: var(--control-alternative);
+				flex: 1;
+				border: 1px solid var(--text-contrast2);
+				border-radius: 5px;
+				color: var(--text-contrast2);
+				padding: 10px 36px;
+	
+				&:first-child {
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
+				}
+				&:last-child {
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+				}
+	
+				&_active {
+					@include mixins.Body_Medium_16pt;
+					line-height: 2.2rem;
+					color: var(--text-contrast);
+					background-color: var(--text-contrast2);
+	
+					&:focus {
+						border-color: var(--border-hover-pressed);
+					}
+				}
+	
+				&:active {
+					box-shadow: 1px 1px 5px 0 var(--border-hover-pressed);
+				}
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: 768px) {
+  .auth .auth__container {
+    min-height: fit-content;
+    padding: 40px 36px;
+		
+    .signup-form {
+			margin-top: -6px;
+    }
+		
+		.tabs .tabs__btn {
+			padding: 4px 37px;
+		}
+  }
+}

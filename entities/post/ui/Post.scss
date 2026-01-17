@@ -1,0 +1,91 @@
+@use "@/shared/styles/mixins";
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .post__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .author__avatar {
+      width: 40px;
+      height: 40px;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+    .author__container {
+      overflow-wrap: break-word;
+      overflow: hidden;
+      .author__name {
+        @include mixins.Body_Medium_16pt;
+        margin-bottom: 3px;
+      }
+      .post__created-at {
+        @include mixins.Body_Regular_14pt;
+        color: var(--text-tertiary);
+      }
+    }
+  }
+  .post__body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .post__title {
+      @include mixins.Body_Semibold_16pt;
+    }
+    .post__image {
+			width: 100%;
+      height: 212px;
+      border-radius: 18px;
+
+      img {
+        border-radius: 18px;
+      }
+    }
+    .post__description {
+      @include mixins.Body_Regular_16pt;
+      color: var(--text-secondary2);
+
+      .post__description_short {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+  }
+  .post__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .post {
+		gap: 24px;
+    .post__body {
+			gap: 16px;
+			.post__title {
+      @include mixins.Title_Semibold_18pt;
+    }
+      .post__description {
+        .post__description_short {
+          -webkit-line-clamp: 3;
+        }
+      }
+      .post__image {
+        height: 346px;
+      }
+    }
+    .post__actions {
+      gap: 24px;
+    }
+  }
+}

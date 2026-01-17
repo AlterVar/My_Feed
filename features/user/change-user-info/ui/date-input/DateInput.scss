@@ -1,0 +1,10 @@
+@use "@/shared/styles/mixins";
+
+.date-input {
+  .input__field {
+    width: 100%;
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+  }
+}

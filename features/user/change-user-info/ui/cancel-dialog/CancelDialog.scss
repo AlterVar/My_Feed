@@ -1,0 +1,34 @@
+@use "@/shared/styles/mixins";
+
+.cancel-change {
+  background-color: var(--bg-primary);
+  max-width: 391px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  .cancel-change__text-container {
+    display: flex;
+    max-width: 290px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    .cancel-change__title {
+      @include mixins.Title_Semibold_18pt;
+      color: var(--text-accent);
+    }
+    .cancel-change__description {
+      @include mixins.Body_Regular_16pt;
+      color: var(--text-secondary2);
+    }
+  }
+  .cancel-change__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}

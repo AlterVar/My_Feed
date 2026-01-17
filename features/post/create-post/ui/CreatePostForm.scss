@@ -1,0 +1,29 @@
+.create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+	flex-grow: 1;
+
+  .create-form__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .create-form__actions {
+    display: flex;
+    gap: 16px;
+    margin-top: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .create-form {
+		gap: 12px;
+    .create-form__fields {
+      gap: 24px;
+    }
+    .create-form__actions {
+      gap: 24px;
+    }
+  }
+}

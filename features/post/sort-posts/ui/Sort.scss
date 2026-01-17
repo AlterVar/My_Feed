@@ -1,0 +1,48 @@
+@use "@/shared/styles/mixins";
+.sort {
+  position: relative;
+
+	&:has(.dropdown_open) {
+		.sort__btn .sort__selected-icon {
+				transform: rotate(360deg);
+			}
+	}
+
+  .sort__btn {
+    min-width: 117px;
+		max-width: 100%;
+		position: relative;
+		padding: 12px 0;
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+		cursor: pointer;
+
+		.sort__selected-value {
+			@include mixins.Body_Medium_16pt;
+		}
+		.sort__selected-icon {
+			transform: rotate(180deg);
+			transition: all 0.3s;
+		}
+  }
+
+}
+
+@media (min-width: 768px) {
+	.sort {
+		.sort__btn {
+			padding: 0;
+			justify-content: start;
+			width: fit-content;
+			background-color: transparent;
+
+			.sort__selected-value {
+				padding-left: 5px;
+			}
+		}
+	}
+}

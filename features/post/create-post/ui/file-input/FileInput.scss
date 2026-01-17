@@ -1,0 +1,95 @@
+@use "@/shared/styles/mixins";
+
+.file {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23beb9b4' stroke-width='1' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  background-color: var(--bg-primary);
+  border-radius: 16px;
+  width: 343px;
+  height: 212px;
+  overflow: hidden;
+	position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &:has(.file__content_loading) {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23ee683e' stroke-width='1' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    background-color: var(--bg-tertiary);
+    pointer-events: none;
+  }
+	.file__label-hint {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 100;
+		background-color: rgba(0, 0, 0, 0.6);
+		@include mixins.Body_Medium_16pt;
+		color: var(--icon-on-colour);
+		cursor: pointer;
+
+		display: none;
+		align-items: center;
+		justify-content: center;
+	}
+  .file__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    @include mixins.Body_Regular_16pt;
+    color: var(--text-on-colour);
+
+    .file__label {
+      position: relative;
+      color: var(--text-contrast2);
+    }
+  }
+}
+.progress {
+  text-align: center;
+
+  .progress__percents {
+    @include mixins.Body_Medium_14pt;
+    color: var(--text-accent);
+    margin-bottom: 8px;
+  }
+  .progress__container {
+    width: 100%;
+    border-radius: 19px;
+    height: 20px;
+    background-color: var(--bg-progressbar);
+    position: relative;
+    overflow: hidden;
+
+    .progress__filler {
+      background-color: var(--bg-contrast);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: all 0.5s;
+      transform: translateX(-100%);
+    }
+  }
+}
+@media (hover: hover) {
+	.file:hover {
+		.file__label-hint{
+			display: flex;
+		}
+	}
+}
+@media (min-width: 768px) {
+  .file {
+    width: 663px;
+    height: 346px;
+
+    .file__content {
+      gap: 8px;
+    }
+  }
+}
