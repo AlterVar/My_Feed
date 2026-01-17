@@ -1,0 +1,29 @@
+@use "@/shared/styles/mixins";
+
+.profile {
+  background-color: var(--bg-primary);
+
+  &.page-container {
+    gap: 20px;
+  }
+  .content-container {
+    border-radius: 16px;
+
+    .profile__title {
+      margin: 0;
+      text-align: center;
+      @include mixins.Title_Bold_24pt;
+      color: var(--text-contrast2);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .profile {
+    background-color: var(--bg-secondary);
+    .content-container {
+      padding: 40px 0 26px;
+      background-color: var(--bg-primary);
+    }
+  }
+}

@@ -1,0 +1,70 @@
+:root[data-theme="light"] {
+  //background
+  --bg-primary: #fcfcfc;
+  --bg-secondary: #f2f2f2;
+  --bg-tertiary: #ffd1c3;
+  --bg-contrast: #ffd1c3;
+  --bg-contrast2: #bdbdbd;
+  --bg-thumbnail: #f6f6f6;
+  --bg-progressbar: #f2f2f2;
+  --bg-cell: #fcfcfc;
+  --bg-cell-hover: #f6f6f6;
+
+  //border
+  --border: #f6f6f6;
+  --border-light: #beb9b4;
+  --border-hover-pressed: #fd825d;
+  --border-accent: #ee683e;
+  --border-positive: #20c997;
+  --border-negative: #f03e3e;
+
+  //text
+  --text-primary: #212121;
+  --text-secondary: #beb9b4;
+  --text-secondary2: #686868;
+  --text-tertiary: #bdbdbd;
+  --text-contrast: #fcfcfc;
+  --text-contrast2: #ee683e;
+  --text-on-colour: #686868;
+  --text-accent: #ee683e;
+  --text-negative: #f03e3e;
+  --text-disabled: #bdbdbd;
+  --text-disabled2: #f2f2f2;
+  --text-disabled3: #beb9b4;
+
+  //icon
+  --icon-primary: #101010;
+  --icon-secondary: #beb9b4;
+  --icon-secondary-hover: #fd825d;
+  --icon-secondary-focus: #ee683e;
+  --icon-contrast: #f2f2f2;
+  --icon-on-colour: #fcfcfc;
+  --icon-accent: #ee683e;
+  --icon-active: #f03e3e;
+  --icon-positive: #20c997;
+  --icon-negative: #f03e3e;
+
+  //link
+  --link-accent: #ee683e;
+
+  //controls
+  --control-primary: #ee683e;
+  --control-primary-hover: #fd825d;
+  --control-primary-pressed: #cd4e27;
+  --control-primary-disabled: #beb9b4;
+  --control-alternative: #fcfcfc;
+  --control-alternative-hover: #fcfcfc;
+  --control-alternative-disabled: #fcfcfc;
+  --control-secondary: #fcfcfc;
+  --control-secondary-active: #ee683e;
+  --control-switch: #212121;
+
+  //system
+  --error: #f03e3e;
+  --success: #20c997;
+  --focus: #ee683e;
+  --modal-background: #212121;
+
+  //shadow
+  --modal-shadow: 0 12px 40px 0 rgba(140, 140, 140, 0.15);
+}

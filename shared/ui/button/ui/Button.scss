@@ -1,0 +1,120 @@
+@use "@/shared/styles/mixins";
+
+.btn {
+  border: 1px solid;
+  align-self: center;
+}
+.btn_primary,
+.btn_secondary {
+  padding: 10px 10px;
+  @include mixins.Body_Medium_14pt;
+  height: 44px;
+  border-radius: 8px;
+}
+.btn_secondary,
+.btn_flat {
+  color: var(--text-contrast2);
+}
+.btn_primary {
+  background-color: var(--control-primary);
+  color: var(--text-contrast);
+  border-color: transparent;
+
+  &:focus {
+    border-color: var(--border-hover-pressed);
+  }
+  &:disabled {
+    background-color: var(--control-primary-disabled);
+    color: var(--text-disabled2);
+    pointer-events: none;
+  }
+}
+.btn__icon_primary {
+  path {
+    fill: var(--icon-on-colour);
+  }
+}
+.btn_secondary {
+  background-color: var(--control-alternative);
+  border: 1px solid var(--text-contrast2);
+
+  &:focus {
+    box-shadow: 1px 1px 5px 0 var(--border-hover-pressed);
+  }
+  &:disabled {
+    border-color: var(--border-light);
+    color: var(--text-secondary);
+    pointer-events: none;
+  }
+}
+.btn__icon_secondary {
+  path {
+    fill: var(--icon-accent);
+  }
+}
+.btn_flat {
+  padding: 0 4px;
+  background-color: transparent;
+  @include mixins.Body_Regular_16pt;
+  width: fit-content;
+  height: 22px;
+  border-radius: 4px;
+  border-color: transparent;
+
+  &:focus {
+    border-color: var(--text-constrast2);
+    box-shadow: 1px 1px 5px 0 var(--border-hover-pressed);
+  }
+  &:disabled {
+    color: var(--text-secondary);
+    pointer-events: none;
+  }
+}
+.btn__icon_flat {
+  path {
+    fill: transparent;
+  }
+}
+.btn_icon {
+  display: flex;
+  background-color: transparent;
+  border: none;
+
+  &.btn_liked {
+    svg path {
+      stroke: var(--icon-active);
+      fill: var(--icon-active);
+    }
+  }
+
+  &:focus {
+    svg path {
+      stroke: var(--icon-secondary-focus);
+    }
+  }
+}
+.btn_small {
+  width: 164px;
+}
+.btn_large {
+  width: 343px;
+}
+
+@media (hover: hover) {
+  .btn_primary:hover {
+    background-color: var(--control-primary-hover);
+  }
+  .btn_secondary:hover {
+    border-color: var(--border-hover-pressed);
+    color: var(--icon-secondary-hover);
+  }
+  .btn_flat:hover {
+    border: 1px solid var(--border-hover-pressed);
+    color: var(--icon-secondary-hover);
+  }
+  .btn_icon:hover {
+    svg path {
+      stroke: var(--icon-secondary-hover);
+    }
+  }
+}

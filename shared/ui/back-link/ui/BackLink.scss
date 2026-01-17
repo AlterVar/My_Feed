@@ -1,0 +1,19 @@
+@use "@/shared/styles/mixins";
+
+.back-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+
+	.back-link__text {
+		@include mixins.Body_Regular_16pt;
+		color: var(--text-secondary2);
+	}
+}
+
+@media (min-width: 768px) {
+	.back-link {
+		margin-top: 8px;
+		margin-left: 32px;
+	}
+}

@@ -1,0 +1,46 @@
+@use "@/shared/styles/mixins";
+
+.new-post {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	min-width: 343px;
+
+	background-color: var(--bg-primary);
+	border-radius: 12px;
+	padding: 10px 16px;
+
+	.new-post__avatar {
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		overflow: hidden;
+		flex-shrink: 0;
+	}
+	.new-post__input {
+		flex-grow: 1;
+		min-width: 180px;
+		outline: none;
+		border: 1px solid var(--bg-primary);
+		background-color: var(--bg-primary);
+		@include mixins.Body_Regular_16pt;
+		color: var(--text-primary);
+		padding: 10px 16px;
+
+		&:focus {
+			border-color: var(--border-hover-pressed);
+      caret-color: var(--focus);
+    }
+    &::placeholder {
+      @include mixins.Body_Regular_16pt;
+      color: var(--text-tertiary);
+    }
+	}
+}
+
+@media (min-width: 768px) {
+	.new-post {
+		padding: 13px 35px 13px 40px;
+		margin-bottom: 8px;
+	}
+}

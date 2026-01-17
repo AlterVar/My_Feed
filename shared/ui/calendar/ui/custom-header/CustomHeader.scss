@@ -1,0 +1,40 @@
+@use "@/shared/styles/mixins";
+
+.react-datepicker__header.react-datepicker__header--custom {
+  background-color: transparent;
+  padding: 8px 0;
+  @include mixins.Body_Semibold_16pt;
+  border-radius: 0;
+  border: none;
+
+  .custom-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .month-container,
+    .year-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .custom-header__arrow {
+      display: flex;
+      background-color: transparent;
+    }
+		.custom-header__select {
+			border: none;
+			color: var(--text-primary);
+			background-color: var(--bg-primary);
+			appearance: none;
+			outline: none;
+			cursor: pointer;
+
+			.custom-header__option {
+				background-color: var(--bg-primary);
+				color: var(--text-primary);
+				@include mixins.Body_Regular_14pt;
+			}
+		}
+  }
+}

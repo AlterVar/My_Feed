@@ -1,0 +1,37 @@
+@use "@/shared/styles/mixins";
+
+.dropdown {
+  z-index: 90;
+  min-width: fit-content;
+  max-width: 343px;
+  width: 100%;
+  background-color: var(--bg-primary);
+  border-radius: 8px;
+  overflow: hidden;
+
+  &_inline {
+    position: absolute;
+    top: 120%;
+		box-shadow: var(--modal-shadow);
+  }
+	&_modal {
+		position: static;
+		border-radius: 16px;
+	}
+
+  .dropdown__option {
+		display: block;
+    padding: 12px 10px;
+    @include mixins.Body_Regular_16pt;
+		color: var(--text-primary);
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &.dropdown__option_selected {
+      @include mixins.Body_Medium_16pt;
+      background-color: var(--bg-contrast);
+			color: #212121;
+    }
+  }
+}

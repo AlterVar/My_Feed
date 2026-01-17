@@ -1,0 +1,45 @@
+@mixin Title_Bold_24pt {
+	font-size: 2.4rem;
+	line-height: 2rem;
+	font-weight: 700;
+}
+@mixin Title_Semibold_18pt {
+	font-size: 1.8rem;
+	line-height: 2.1rem;
+	font-weight: 600;
+}
+@mixin Body_Bold_20pt {
+	font-size: 2rem;
+	line-height: 2rem;
+	font-weight: 700;
+}
+@mixin Body_Semibold_16pt {
+	font-size: 1.6rem;
+	line-height: 2rem;
+	font-weight: 600;
+}
+@mixin Body_Medium_16pt {
+	font-size: 1.6rem;
+	line-height: 2rem;
+	font-weight: 500;
+}
+@mixin Body_Medium_14pt {
+	font-size: 1.4rem;
+	line-height: 2rem;
+	font-weight: 500;
+}
+@mixin Body_Regular_16pt {
+	font-size: 1.6rem;
+	line-height: 2.2rem;
+	font-weight: 400;
+}
+@mixin Body_Regular_14pt {
+	font-size: 1.4rem;
+	line-height: 1.6rem;
+	font-weight: 400;
+}
+@mixin Caption_Regular_12pt {
+	font-size: 1.2rem;
+	line-height: 2.2rem;
+	font-weight: 400;
+}
