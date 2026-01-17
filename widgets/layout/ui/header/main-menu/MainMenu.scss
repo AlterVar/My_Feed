@@ -1,0 +1,68 @@
+@use "@/shared/styles/mixins";
+@use "@/shared/styles/variables" as vars;
+
+.main-menu {
+  .main-menu__list {
+    display: flex;
+    flex-direction: column;
+    @include mixins.Body_Regular_14pt;
+    color: var(--text-tertiary);
+
+    .main-menu__item {
+      padding: 18px 0;
+      cursor: pointer;
+      .main-menu__link {
+        color: var(--text-tertiary);
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--bg-progressbar);
+      }
+
+      &.main-menu__item_active {
+        @include mixins.Body_Semibold_16pt;
+        pointer-events: none;
+        .main-menu__link {
+          color: var(--text-primary);
+        }
+      }
+    }
+  }
+}
+
+@media (hover: hover) {
+  .main-menu {
+    .main-menu__list {
+      .main-menu__item:hover {
+        .main-menu__link {
+          color: var(--text-accent);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-menu {
+    .main-menu__list {
+      @include mixins.Body_Regular_16pt;
+      flex-direction: row;
+      gap: 5vw;
+      .main-menu__item {
+        padding: 0;
+
+        &:not(:last-child) {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main-menu {
+    .main-menu__list {
+      gap: 93px;
+    }
+  }
+}

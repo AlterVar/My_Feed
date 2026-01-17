@@ -1,0 +1,30 @@
+@use "@/shared/styles/mixins";
+.error {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  .error__image {
+    position: relative;
+    max-width: 543px;
+    svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .error__code {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-weight: 700;
+      font-size: clamp(15rem, 50cqw, 30rem);
+			color: var(--icon-accent);
+			z-index: -1;
+    }
+  }
+  .error__description {
+    @include mixins.Body_Regular_16pt;
+    color: var(--text-secondary2);
+  }
+}

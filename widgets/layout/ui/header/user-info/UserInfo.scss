@@ -1,0 +1,50 @@
+@use "@/shared/styles/mixins";
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  padding: 0 7px;
+
+  &:has(.dropdown_open) {
+    .user-info__arrow {
+      transform: rotate(180deg);
+    }
+  }
+  .user-info__avatar {
+		flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+		border-radius: 50%;
+		overflow: hidden;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .user-info__btn {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+
+    .user-info__name {
+      @include mixins.Body_Medium_16pt;
+			max-width: 123px;
+			margin-right: 8px;
+    }
+    .user-info__arrow {
+      transition: all 0.3s;
+    }
+    .dropdown_open {
+      top: 147%;
+      left: 0;
+			z-index: 90;
+			.dropdown__option {
+				text-align: left;
+				@include mixins.Body_Regular_14pt;
+			}
+    }
+  }
+}

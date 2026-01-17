@@ -1,0 +1,109 @@
+@use "@/shared/styles/mixins";
+
+.header {
+  background-color: var(--bg-primary);
+	position: relative;
+	z-index: 100;
+
+  .container {
+    padding: 22px 16px;
+  }
+
+  .header__mobile-bar,
+  .header__nav-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .header__burger,
+    .header__close {
+      display: flex;
+      position: absolute;
+      left: 0;
+      cursor: pointer;
+    }
+    .header__page-title {
+      @include mixins.Body_Bold_20pt;
+    }
+  }
+  .header__nav-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: scroll;
+    padding: 20px 16px;
+    transform: translateX(100%);
+    transition: all 0.5s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+
+    &.header__nav-panel_open {
+			background-color: var(--bg-primary);
+      transform: translateX(0);
+    }
+    .header__main-menu {
+      justify-self: safe center;
+      order: 3;
+    }
+    .header__theme {
+      margin-top: auto;
+      order: 4;
+    }
+    .header__user-info {
+      order: 2;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    .container {
+      padding: 13px 48px;
+    }
+    .header__mobile-bar {
+      display: none;
+    }
+    .header__nav-header {
+      .header__burger,
+      .header__close {
+        display: none;
+      }
+    }
+    .header__nav-panel {
+      position: static;
+      overflow: visible;
+      padding: 0;
+      gap: 0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: safe center;
+      transform: translate(0);
+
+      .header__nav-header {
+        flex-grow: 2;
+        justify-content: start;
+      }
+      .header__main-menu {
+				flex-shrink: 0;
+				padding: 0 10px;
+        flex-grow: 2;
+        display: flex;
+        justify-content: center;
+        order: 1;
+      }
+      .header__theme {
+        order: 2;
+        flex-grow: 1;
+        display: flex;
+        justify-content: end;
+        margin-top: 0;
+        margin-right: clamp(20px, 2.5vw, 40px);
+      }
+    }
+  }
+}

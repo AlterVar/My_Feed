@@ -1,0 +1,26 @@
+@use "@/shared/styles/mixins";
+
+.share {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+	padding: 24px 16px;
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+
+  .share__title {
+    @include mixins.Body_Bold_20pt;
+    color: var(--text-accent);
+  }
+	.share__form {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+}
+
+@media (min-width: 768px) {
+	.share {
+		padding: 24px 40px 32px;
+	}
+}
