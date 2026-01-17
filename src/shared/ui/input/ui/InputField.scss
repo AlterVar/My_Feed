@@ -1,0 +1,49 @@
+@use "@/shared/styles/mixins";
+
+.input {
+  position: relative;
+  .input__label {
+		display: block;
+    @include mixins.Body_Medium_16pt;
+  }
+  .input__field {
+    width: 100%;
+    padding: 10px 16px;
+		margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    outline: none;
+    background-color: var(--bg-thumbnail);
+    @include mixins.Body_Regular_16pt;
+    color: var(--text-primary);
+
+    &:focus {
+			border-color: var(--border-hover-pressed);
+      caret-color: var(--focus);
+    }
+    &::placeholder {
+      @include mixins.Body_Regular_16pt;
+      color: var(--text-tertiary);
+    }
+    &.input__field_invalid{
+			border-color: var(--text-negative);
+    }
+		&:has(~.input__error) {
+			margin-bottom: 3px;
+		}
+  }
+  .input__icon {
+    position: absolute;
+    top: 35px;
+    right: 15px;
+  }
+  .input__icon_invalid {
+    path {
+      stroke: var(--icon-negative);
+    }
+  }
+  .input__error {
+    @include mixins.Caption_Regular_12pt;
+    color: var(--text-negative);
+  }
+}

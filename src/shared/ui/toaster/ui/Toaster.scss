@@ -1,0 +1,28 @@
+@use "@/shared/styles/mixins";
+
+.toaster {
+  max-width: 376px;
+  background-color: var(--bg-primary);
+	color: var(--text-primary);
+	outline: none;
+
+  position: fixed;
+  top: 16%;
+  left: auto;
+  right: 3.5%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 13px 24px;
+  border: none;
+  border-radius: 8px;
+	box-shadow: 0 0 2px 2px var(--bg-secondary);
+
+  .toaster__icon {
+    display: flex;
+  }
+  .toaster__text {
+    @include mixins.Body_Regular_16pt;
+  }
+}

@@ -1,0 +1,11 @@
+.post-list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+@media (min-width: 768px) {
+	.post-list {
+		gap: 24px;
+	}
+}

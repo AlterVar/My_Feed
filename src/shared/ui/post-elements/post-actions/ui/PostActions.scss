@@ -1,0 +1,11 @@
+.post-actions {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+@media (min-width: 768px) {
+	.post-actions {
+		gap: 24px;
+	}
+}

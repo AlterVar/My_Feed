@@ -1,0 +1,24 @@
+.post-item {
+  background-color: var(--bg-primary);
+  border-radius: 16px;
+  padding: 24px 16px;
+	position: relative;
+	color: var(--text-primary);
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+@media (min-width: 768px) {
+	.post-item {
+		padding: 24px 40px 32px;
+		gap: 16px;
+
+		.actions_top {
+			position: absolute;
+			top: 32px;
+			right: 40px;
+		}
+	}
+}
